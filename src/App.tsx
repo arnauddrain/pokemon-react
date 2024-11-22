@@ -14,8 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
 
-  async function search(e: React.FormEvent) {
-    e.preventDefault();
+  async function search() {
     setLoading(true);
     const res = await fetch(
       `https://api.pokemontcg.io/v2/cards?q=name:${query}&pageSize=10`
