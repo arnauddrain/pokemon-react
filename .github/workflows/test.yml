@@ -17,4 +17,4 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H 151.80.58.182 >> ~/.ssh/known_hosts
       - name: Push with scp
-        run: scp -r dist/* root@
+        run: scp -r dist/* debian@151.80.58.182
