@@ -4,25 +4,6 @@ import "./App.css";
 interface Card {
   id: string;
   name: string;
-  images: {
-    small: string;
-  };
-}
-
-function App() {
-  const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [cards, setCards] = useState([]);
-
-  async function search(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    const res = await fetch(
-      `https://api.pokemontcg.io/v2/cards?q=name:${query}&pageSize=10`
-    );
-    const data = await res.json();
-    setCards(data.data);
-    setLoading(false);
   }
 
   return (
