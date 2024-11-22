@@ -28,7 +28,7 @@ function App() {
     <>
       <form onSubmit={search}>
         <input onChange={(e) => setQuery(e.target.value)} />
-        <button>{loading ? "..." : "Rechercher"}</button>
+        <button>{loading ? "..." : "Reccher"}</button>
       </form>
       <div>
         {cards.map((card: Card) => (
