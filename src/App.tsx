@@ -14,7 +14,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
 
-  async function search() {
+  async function search(e: React.FormEvent) {
+    e.preventDefault();
     setLoading(true);
     const res = await fetch(
       `https://api.pokemontcg.io/v2/cards?q=name:${query}&pageSize=10`
@@ -28,7 +29,7 @@ function App() {
     <>
       <form onSubmit={search}>
         <input onChange={(e) => setQuery(e.target.value)} />
-        <button>{loading ? "..." : "Reccher"}</button>
+        <button>{loading ? "..." : "Rechercher"}</button>
       </form>
       <div>
         {cards.map((card: Card) => (
